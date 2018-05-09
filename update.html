@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>下载</title>
+    <script src="bootstrap/js/jquery-3.2.1.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/alertPopShow.js"></script>
+    <script src="bulid/js/config.js"></script>
+    <script src="http://gosspublic.alicdn.com/aliyun-oss-sdk-4.4.4.min.js"></script>
+    <link rel="stylesheet" href="bootstrap/css/common.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bulid/css/update.css">
+    <script>
+        var s = parseInt(window.screen.width) / 750;
+        var vp = '<meta name="viewport" content="width=750, minimum-scale = ' + s + ', maximum-scale = ' + s + ', target-densitydpi=device-dpi">';
+        document.write(vp);
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row position">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 top_img"><img src="img/update/bg.png" alt="" /></div>
+        <button id="btn" class="btns"><!-- <img src="img/update/btn.png" alt="" /> -->房东端下载</button>
+        <button id="btns" class="btns btns2"><!-- <img src="img/update/btn.png" alt="" /> -->租客端下载</button>
+        <div id="mask" class="mask"><div class="arrow"><img src="img/update/arrow.png" alt="" /></div></div>
+    </div>
+</div>
+
+</body>
+<!-- <body>
+  <input type="file" id="file" />
+  <script type="text/javascript">
+    document.getElementById('file').addEventListener('change', function (e) {
+      var file = e.target.files[0];
+      var storeAs = 'idCard/'+file.name;
+      console.log(file + ' => ' + storeAs);
+      OSS.urllib.request("http://192.168.1.11:2002/file/getToken1",
+                      {method: 'GET'}, 
+                      function (err, response) {
+          if (err) {
+            return alert(err);
+          }
+          try {
+            result = JSON.parse(response);
+          } catch (e) {
+            return alert('parse sts response info error: ' + e.message);
+          }
+          var client = new OSS.Wrapper({
+            accessKeyId: result.AccessKeyId,
+            accessKeySecret: result.AccessKeySecret,
+            stsToken: result.SecurityToken,
+            endpoint: 'http://oss-cn-beijing.aliyuncs.com',
+            bucket: 'yuqiongyao'
+          });
+          client.multipartUpload(storeAs, file).then(function (result) {
+            console.log(result);
+          }).catch(function (err) {
+            console.log(err);
+          });
+        });
+    });
+  </script>
+</body> -->
+<script src="bulid/js/update.js"></script>
+</html>

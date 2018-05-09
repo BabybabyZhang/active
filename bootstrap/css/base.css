@@ -1,0 +1,104 @@
+/* 初始化一些样式 */
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    /* 去除移动端 默认的 手指 点击 高亮效果  transparent 透明*/
+    -webkit-tap-highlight-color: transparent;
+
+    /* 添加 盒子模型 为了 优先 保证 盒子的 大小 */
+    -webkit-box-sizing:border-box ;
+    box-sizing: border-box;
+    font-family: "Microsoft YaHei";
+
+}
+body{
+    min-height: 1334px;
+}
+/* a标签 */
+a{
+    text-decoration: none;
+}
+
+ul,ol{
+    list-style: none;
+}
+
+/* 移动端 会取出 他四周的 边框 */
+input{
+    border: none;
+    outline: none;
+    /* 有一些 移动端的浏览器 会有默认的 3d效果 比如 阴影,3d渐变 */
+    -webkit-appearance: none;
+    font-family: "Microsoft YaHei";
+}
+
+/* 浮动 */
+/* 左浮动 */
+.f_left{
+    float: left;
+}
+
+/* 右浮动 */
+.f_right{
+    float: right;
+}
+/* 清除浮动 */
+.clearfix::before,
+.clearfix::after{
+    content: '';
+    display: block;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    clear: both;
+}
+
+
+/* 定义为 公共的 m10 */
+.m_l10{
+    margin-left: 10px;
+}
+.m_r10{
+    margin-right: 10px;
+}
+.m_b10{
+    margin-bottom: 10px;
+}
+.m_t10{
+    margin-top: 10px;
+}
+
+
+/* 定义 公共的 线段 class */
+.b_l{
+    border-left: 1px solid #eee;
+}
+.b_t{
+    border-top: 1px solid #eee;
+}
+
+.b_b{
+    border-bottom: 1px solid #eee;
+}
+
+.b_r{
+    border-right: 1px solid #eee;
+}
+
+.masks {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top:0;
+    bottom: 0;
+    margin:auto;
+    height: 100%;
+    background: url('../../img/common/loading.gif') no-repeat center;
+    opacity: 1;
+}
+.hidden {
+    opacity: 0;
+}
